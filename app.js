@@ -1,11 +1,11 @@
 'use strict';
-const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f','g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' © Caity Heath'];
 
 const dropZone = document.getElementById('zone');
 const body = document.getElementsByTagName('body');
 
 
-function Magnet(mag, x, y){
+function Magnet(mag, x, y) {
   this.magnetName = mag;
   this.posx = x;
   this.posy = y;
@@ -16,7 +16,7 @@ function Magnet(mag, x, y){
 Magnet.allMagnets = [];
 
 
-function createMagnets(){
+function createMagnets() {
   magnets.forEach(idx => {
     let x = rando(10, 90);
     let y = rando(10, 90);
@@ -34,7 +34,7 @@ function createMagnets(){
 
 /////////// HELPER FUNCTIONS \\\\\\\\\\\\\\\\
 
-function addElement(ele, content, parent){
+function addElement(ele, content, parent) {
   let newEl = document.createElement(ele);
   let newContent = document.createTextNode(content);
   let newId = document.createAttribute('id');
@@ -52,16 +52,16 @@ function addElement(ele, content, parent){
 }
 
 function rando(min, max) {
-  var randomNumber = Math.floor(Math.random()*(max-min+1))+min;
+  var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
   return randomNumber;
 }
 
-function grabMagnet(e, data){
+function grabMagnet(e, data) {
   e.preventDefault();
   let id = data;
   Magnet.allMagnets.forEach(idx => {
-    if(idx.magnetName === id){
+    if (idx.magnetName === id) {
       console.log(e.pageX);
       console.log(e.pageY);
       idx.posx = - e.pageX;
@@ -77,7 +77,7 @@ function dragstart_handler(e) {
   e.dataTransfer.setData('text/plain', e.target.id);
 }
 
-function dragover_handler(e){
+function dragover_handler(e) {
   e.preventDefault();
   e.dataTransfer.dropEffect = 'move';
 };
