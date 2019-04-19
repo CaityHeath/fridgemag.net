@@ -28,8 +28,7 @@ p{
   display: inline;
   color: red;
   font-size: 1.75em;
-  font-family: 'Londrina Solid', cursive;
-  text-shadow: 1px -1px black;
+  font-family: 'Anton', sans-serif;
 }
 
 @media screen and (max-width: 1100px){

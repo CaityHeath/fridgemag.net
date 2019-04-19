@@ -1,6 +1,8 @@
 'use strict';
 const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' © Caity Heath'];
 
+const colors = ['#FF0000', '#0000FF', '#FFFF00', '#7FFF00', '#FF7F00', '#7F00FF'];
+
 const dropZone = document.getElementById('zone');
 const body = document.getElementsByTagName('body');
 
@@ -24,7 +26,8 @@ function createMagnets() {
     new Magnet(idx, x, y);
 
     let tag = addElement('p', idx, zone)
-    tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%; padding: 3px;`);
+    let randomColor = Math.floor(Math.random() * 6);
+    tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%; padding: 3px; color:${colors[randomColor]};`);
     tag.addEventListener('dragstart', dragstart_handler);
   });
 }
