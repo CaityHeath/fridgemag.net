@@ -44,4 +44,10 @@ p{
     -o-background-size: cover;
     background-size: cover;
   }
+
+  #zone{
+    border: 1px solid black;
+    width: 90%;
+    left: 5%;
+  }
 }

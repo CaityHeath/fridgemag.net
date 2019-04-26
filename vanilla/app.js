@@ -1,4 +1,4 @@
-'use strict';
+
 const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' © CH'];
 
 const colors = ['#FF0000', '#0000FF', '#FFFF00', '#ADFF9E', '#FF7F00', '#7F00FF'];
@@ -20,8 +20,8 @@ Magnet.allMagnets = [];
 
 function createMagnets() {
   magnets.forEach(idx => {
-    let x = rando(10, 90);
-    let y = rando(10, 90);
+    let x = rando(5, 95);
+    let y = rando(5, 95);
 
     new Magnet(idx, x, y);
 
@@ -90,10 +90,15 @@ function drop_handler(e) {
   let selected = document.getElementById(data);
   e.target.appendChild(document.getElementById(data));
   selected.style.position = 'fixed';
-  console.log(selected.offsetHeight);
-  console.log(selected.offsetWidth);
-  selected.style.left = `${e.pageX}px`;
-  selected.style.top = `${e.pageY}px`;
+
+  let calcX = 100 / document.documentElement.clientWidth;
+  let calcY = 100 / document.documentElement.clientHeight;
+
+  let x = e.pageX * calcX;
+  let y =  e.pageY * calcY;
+
+  selected.style.left = `${x}vw`;
+  selected.style.top = `${y}vh`;
   grabMagnet(e, data);
 }
 
