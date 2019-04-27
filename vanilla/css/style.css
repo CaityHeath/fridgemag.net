@@ -25,9 +25,8 @@ body {
 
 p{
   display: inline;
-  color: red;
   font-size: 1.75em;
-  font-family: 'Anton', sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 @media screen and (max-width: 1100px){
@@ -46,7 +45,6 @@ p{
   }
 
   #zone{
-    border: 1px solid black;
     width: 90%;
     left: 5%;
   }
