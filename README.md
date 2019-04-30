@@ -20,7 +20,8 @@ Canvas drawing tool which will allow users to draw on the sheets of paper hangin
 
 #### Check list 
 
-[x] Responsive design, including both the fridge and magnets on the fridge 
-[x] Drag and drop feature
-[] Database persistence
-[] Canvas drawing feature 
+✅ Responsive design, including both the fridge and magnets on the fridge <br>
+✅ Drag and drop feature <br>
+⭕️ Database persistence <br>
+⭕️ Canvas drawing feature <br>
+ 
