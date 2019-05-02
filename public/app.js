@@ -1,4 +1,8 @@
 
+// const clientHeight = document.documentElement.clientHeight;
+// let html = document.getElementsByTagName('html');
+// html.setAttribute('style', `height: ${html}px`);
+
 const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' © CH'];
 
 const colors = ['#FF0000', '#403383', '#098571', '#F8e100'];
