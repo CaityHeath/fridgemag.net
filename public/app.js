@@ -18,6 +18,7 @@ Magnet.allMagnets = [];
 
 
 function createMagnets() {
+
   magnets.forEach(idx => {
     let x = rando(5, 95);
     let y = rando(5, 95);
@@ -27,6 +28,7 @@ function createMagnets() {
     let tag = addElement('p', idx, zone);
     tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%; padding: 2px;`);
     tag.addEventListener('dragstart', dragstart_handler);
+    tag.addEventListener('ontouchstart', dragstart_handler);
   });
 }
 
@@ -53,7 +55,7 @@ function addElement(ele, content, parent) {
 }
 
 function rando(min, max) {
-  var randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
   return randomNumber;
 }
@@ -92,11 +94,10 @@ function drop_handler(e) {
   let calcX = 100 / document.documentElement.clientWidth;
   let calcY = 100 / document.documentElement.clientHeight;
   let randomColor = Math.floor(Math.random() * 4);
-  console.log(randomColor);
   let x = e.pageX * calcX;
   let y =  e.pageY * calcY;
+  //console.log('client height',document.documentElement.clientHeight);
   selected.style.color = `${colors[randomColor]}`;
-  console.log(colors[randomColor]);
   selected.style.left = `${x}vw`;
   selected.style.top = `${y}vh`;
   selected.style.padding = `${calcX * 1}vw`;
@@ -108,4 +109,7 @@ function drop_handler(e) {
 
 createMagnets();
 dropZone.addEventListener('dragover', dragover_handler);
+
+
 dropZone.addEventListener('drop', drop_handler);
+dropZone.addEventListener('touchend', drop_handler);
