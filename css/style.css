@@ -49,3 +49,10 @@ p{
     left: 5%;
   }
 }
+
+@media screen and (max-width: 600px){
+  #zone{
+    width: 98%;
+    left: 1%;
+  }
+}

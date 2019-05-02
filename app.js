@@ -1,7 +1,7 @@
 
 const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' © CH'];
 
-const colors = ['#FF0000', '#0000FF', '#FFFF00', '#ADFF9E', '#FF7F00', '#7F00FF'];
+const colors = ['#FF0000', '#403383', '#098571', '#F8e100'];
 
 const dropZone = document.getElementById('zone');
 
@@ -25,7 +25,7 @@ function createMagnets() {
     new Magnet(idx, x, y);
 
     let tag = addElement('p', idx, zone);
-    tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%; padding: 0px;`);
+    tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%; padding: 2px;`);
     tag.addEventListener('dragstart', dragstart_handler);
   });
 }
@@ -91,12 +91,15 @@ function drop_handler(e) {
 
   let calcX = 100 / document.documentElement.clientWidth;
   let calcY = 100 / document.documentElement.clientHeight;
-  let randomColor = Math.floor(Math.random() * 6);
+  let randomColor = Math.floor(Math.random() * 4);
+  console.log(randomColor);
   let x = e.pageX * calcX;
   let y =  e.pageY * calcY;
   selected.style.color = `${colors[randomColor]}`;
+  console.log(colors[randomColor]);
   selected.style.left = `${x}vw`;
   selected.style.top = `${y}vh`;
+  selected.style.padding = `${calcX * 1}vw`;
   grabMagnet(e, data);
 }
 
