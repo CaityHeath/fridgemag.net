@@ -57,7 +57,12 @@ p{
     width: 98vw;
     left: 1vw;
   }
+
+
+}
+
+@media screen and (max-width: 400px){
   p{
-    font-size: 3em;
+    font-size: 7vw;
   }
 }
