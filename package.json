@@ -1,0 +1,26 @@
+{
+  "name": "fridgemag.net",
+  "version": "1.0.0",
+  "description": "Fridge Magnets is a fun application that gives users a platform to leave fun messages for their friends and family.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CaityHeath/fridgemag.net.git"
+  },
+  "author": "Caity Heath",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CaityHeath/fridgemag.net/issues"
+  },
+  "homepage": "https://github.com/CaityHeath/fridgemag.net#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}

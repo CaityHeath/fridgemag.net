@@ -6,7 +6,7 @@ main{
 }
 
 body {
-  background: url('../assets/desktopfridge.png') no-repeat center center fixed;
+  background: url('./assets/desktopfridge.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -37,7 +37,7 @@ p{
 
 @media screen and (max-width: 1000px){
   body{
-    background: url('../assets/mobilefridge.png') no-repeat center center fixed;
+    background: url('./assets/mobilefridge.png') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
