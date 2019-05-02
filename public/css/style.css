@@ -47,6 +47,8 @@ p{
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+
+    overflow: hidden;
   }
 
   #zone{
@@ -67,6 +69,7 @@ p{
 }
 
 @media screen and (max-width: 400px){
+
   p{
     font-size: 7vw;
   }
