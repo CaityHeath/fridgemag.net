@@ -1,8 +1,4 @@
 
-// const clientHeight = document.documentElement.clientHeight;
-// let html = document.getElementsByTagName('html');
-// html.setAttribute('style', `height: ${html}px`);
-
 const magnets = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' © CH'];
 
 const colors = ['#FF0000', '#403383', '#098571', '#F8e100'];
@@ -22,7 +18,6 @@ Magnet.allMagnets = [];
 
 
 function createMagnets() {
-
   magnets.forEach(idx => {
     let x = rando(5, 95);
     let y = rando(5, 95);
@@ -30,13 +25,14 @@ function createMagnets() {
     new Magnet(idx, x, y);
 
     let tag = addElement('p', idx, zone);
-    tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%; padding: 2px;`);
-    tag.addEventListener('dragstart', dragstart_handler);
-    tag.addEventListener('ontouchstart', dragstart_handler);
+    tag.setAttribute('style', `position: absolute; left: ${x}%; top: ${y}%;`);
+    // tag.addEventListener('dragstart', dragstart_handler);
   });
 }
 
-
+$( function() {
+  $( ".draggable" ).draggable();
+} );
 
 
 /////////// HELPER FUNCTIONS \\\\\\\\\\\\\\\\
@@ -45,18 +41,21 @@ function addElement(ele, content, parent) {
   let newEl = document.createElement(ele);
   let newContent = document.createTextNode(content);
   let newId = document.createAttribute('id');
-  let drag = document.createAttribute('draggable');
+  let newClass = document.createAttribute('class');
+
 
   newId.value = content;
-  drag.value = true;
+  newClass.value = "draggable";
 
   newEl.setAttributeNode(newId);
-  newEl.setAttributeNode(drag);
+  newEl.setAttributeNode(newClass);
   newEl.appendChild(newContent);
   parent.appendChild(newEl);
 
   return newEl;
 }
+
+
 
 function rando(min, max) {
   let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
@@ -112,8 +111,8 @@ function drop_handler(e) {
 
 
 createMagnets();
-dropZone.addEventListener('dragover', dragover_handler);
+//dropZone.addEventListener('dragover', dragover_handler);
 
 
-dropZone.addEventListener('drop', drop_handler);
-dropZone.addEventListener('touchend', drop_handler);
+// dropZone.addEventListener('drop', drop_handler);
+// dropZone.addEventListener('touchend', drop_handler);
