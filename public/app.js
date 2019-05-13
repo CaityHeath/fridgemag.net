@@ -23,7 +23,7 @@ function createMagnets() {
     new Magnet(idx, x, y);
 
     let tag = addElement('p', idx, zone);
-    tag.setAttribute('style', `position: absolute; left: ${x}vw; top: ${y}vh; color:${colors[color]}`);
+    tag.setAttribute('style', `left: ${x}vw; top: ${y}vh; color:${colors[color]}`);
   });
 }
 
