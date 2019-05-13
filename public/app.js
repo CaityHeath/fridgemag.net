@@ -24,8 +24,6 @@ function createMagnets() {
 
     let tag = addElement('p', idx, zone);
     tag.setAttribute('style', `left: ${x}vw; top: ${y}vh; color:${colors[color]}`);
-    tag.addEventListener('dragstart', dragstart_handler);
-    tag.addEventListener('ontouchstart', dragstart_handler);
   });
 }
 
@@ -80,4 +78,3 @@ return calcY * posY;
 
 
 createMagnets();
-
