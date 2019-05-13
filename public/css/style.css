@@ -26,6 +26,7 @@ body {
   position: relative;
   top: 3%;
   left: 48.5%;
+  border: 1px solid red;
 }
 
 p{
