@@ -80,5 +80,4 @@ return calcY * posY;
 
 
 createMagnets();
-dropZone.addEventListener('drop', drop_handler);
-dropZone.addEventListener('touchend', drop_handler);
+
